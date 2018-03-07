@@ -52,3 +52,15 @@ function addToStack(item, stack){
     return [item].concat(stack.length >= STACK_SIZE ? stack.slice(0, stack.length - 1) : stack)
 
 }
+
+// Format clipboard stack menu
+function formatMenu(stack){
+
+    return stack.map((item, i) => {
+        return {
+            label: `Copy: ${item}`,
+            click: () => { clipboard.writeText(item) }
+        }
+    })
+
+}
