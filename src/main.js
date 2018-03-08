@@ -60,9 +60,19 @@ function formatMenu(stack){
 
     return stack.map((item, i) => {
         return {
-            label: `Copy: ${item}`,
+            label: `Copy: ${ formatText(item) }`,
             click: () => { clipboard.writeText(item) }
         }
     })
+
+}
+
+function formatText(item){
+
+    if( item.length > 20 ){
+        return item.slice(0, 20) + '...'
+    }
+
+    return item;
 
 }
