@@ -5,6 +5,8 @@ const { app, Tray, Menu, clipboard } = electron
 
 const STACK_SIZE = 5
 
+app.dock.hide()
+
 app.on('ready', () => {
 
     let stack = []
@@ -18,7 +20,7 @@ app.on('ready', () => {
         }
     ])
     tray.setContextMenu(contextMenu)
-
+    
     // Check clipboard
     checkClipboardChanged(clipboard, text => {
         stack = addToStack(text, stack)
