@@ -3,7 +3,7 @@ const path = require('path')
 
 const { app, Tray, Menu, clipboard } = electron
 
-const STACK_SIZE = 5
+const STACK_SIZE = 10
 
 app.dock.hide()
 
